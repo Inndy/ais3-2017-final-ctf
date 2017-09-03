@@ -1,0 +1,6 @@
+.sect code 0x9480
+
+start:
+nop
+rand
+jmp $start+8

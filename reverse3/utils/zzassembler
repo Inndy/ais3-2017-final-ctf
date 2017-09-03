@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+
+import sys
+import os
+import struct
+try:
+    import better_exceptions
+except:
+    pass
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../lib/python')))
+
+from zzvm import Parser, encode
+
+try:
+    outfile = sys.argv[2]
+except:
+    outfile = 'a.zz'
+
+parser = Parser(open(sys.argv[1]))
+payload = parser.build()
+open(outfile, 'wb').write(encode.zz_encode_data(payload))

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+./utils/zzassembler "$1"
+./zzvm/zzvm run a.zz
